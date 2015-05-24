@@ -1,0 +1,10 @@
+{
+  "url": "https://loudelement-free-natural-language-processing-service.p.mashape.com/nlp-text/",
+  "needsApiKey": true,
+  "contentType": "application/json",
+  "apiKeyName":  "X-Mashape-Key",
+  "apiKeyValue": "INSERT YOUR API KEY HERE",
+  "needsApiSecret": false,
+  "multipleParams": false,
+  "urlParams": "text"
+}

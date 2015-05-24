@@ -9,6 +9,7 @@
  * config-json should look like:
 {
   "url": "https://the.monkey-api-url.com",
+  "contentType": "text/plain", // could be "application/json"
   "needsApiKey": true,
   "apiKeyName": "monkey-api-key",
   "apiKeyValue": "ZephaniahWasABullfrog",
@@ -60,6 +61,7 @@ var config = require(configPath);
 console.log("Starting intermediator on port ", port);
 console.log("Configuration ", configPath, " says:\n", config);
 console.log("API url: ", config.url);
+console.log("API content-type: ", config.contentType);
 console.log("API needs key: ", config.needsApiKey);
 console.log("API needs multiple params: ", config.multipleParams);
 console.log("API url params: ", config.urlParams);
@@ -76,7 +78,7 @@ app.get('*', function (req, res) {
 
 	unirest.get(mashapeURL(req, config))
 	    .header(config.apiKeyName, config.apiKeyValue)
-	    .header("Accept", "text/plain")
+	    .header("Accept", config.contentType)
 	    //.header("Accept", "application/json")
 	    .end(function(result) {
 		    console.log("\nstatus:\n", result.status, 

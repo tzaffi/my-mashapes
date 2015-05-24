@@ -40,3 +40,26 @@ should result in
 Baseball very much I like. But much more than baseball I really like basketball. Hmmmmmm.
 ```
 
+### Sentiment Analysis through Loud Element
+
+**THANK YOU Taewook Kang (taewook.kang@gmail.com)**
+
+From the top level project directory, start with the command:
+```
+node intermediator.js 9999 loudelement/config.json
+```
+
+Clicking on 
+[http://localhost:9999/I like baseball very much. But I really like basketball much more than baseball.](http://localhost:9999/I%20like%20baseball%20very%20much.%20But%20I%20really%20like%20basketball%20much%20more%20than%20baseball.)
+should result in 
+```json
+{
+api-author: "Taewook Kang (taewook.kang@gmail.com)",
+api-usage: "completely free as long as you give me credit somewhere on your website.",
+sentiment-text: "positive",
+sentiment-score: 0.66666666666633,
+status: "OK",
+language: "English"
+}
+```
+

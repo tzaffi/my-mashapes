@@ -1,5 +1,6 @@
 {
   "url": "https://yoda.p.mashape.com/yoda",
+  "contentType": "text/plain", 
   "needsApiKey": true,
   "apiKeyName":  "X-Mashape-Key",
   "apiKeyValue": "YOUR YODASPEAK MASHAPE API KEY HERE",
