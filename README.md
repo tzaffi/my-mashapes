@@ -4,6 +4,11 @@ One off, dockerizable node express bridges to some of my favorite [mashape](http
 
 **WIP**
 
+# TODO
+* Compare the **neutrino** ip locator to see how **POST**'s need to be handled
+ * In particular `post` and `send` are used.
+ * Multiple paramsters are `send`'ed
+
 ##First, let's put the links down
 
 * Yodaize virtually any English sentence with [Yoda Speak](https://www.mashape.com/ismaelc/yoda-speak)
