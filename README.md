@@ -14,7 +14,7 @@ One off, dockerizable node express bridges to some of my favorite [mashape](http
 
 * That's done. See the local config.json for each file
 
-## Here's what you can excect
+## Here's what you can expect
 
 ### YODA:
 
