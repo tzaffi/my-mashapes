@@ -8,6 +8,11 @@ One off, dockerizable node express bridges to some of my favorite [mashape](http
 * Compare the [**neutrino** ip locator](./neutrino/mashape-example.js) to see how **POST**'s need to be handled
  * In particular `post` and `send` are used.
  * Multiple paramsters are `send`'ed
+* Add a `Dockerfile` in each directory
+* Add a `makefile`. It should allow you to
+ * run each api at a preconfigured port
+ * build each docker image
+ * run each docker image at a preconfigured port
 
 ##First, let's put the links down
 
