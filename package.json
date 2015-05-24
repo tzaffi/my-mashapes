@@ -1,0 +1,33 @@
+{
+  "name": "my-mashapes",
+  "version": "1.0.0",
+  "description": "Yoda and weather and geo and stings, these are a few of my favorite things...",
+  "main": "intermediator.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tzaffi/my-mashapes.git"
+  },
+  "keywords": [
+    "node",
+    "docker",
+    "mashape",
+    "yoda",
+    "sentiment",
+    "ip-address"
+  ],
+  "author": "Zeph Grunschlag",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tzaffi/my-mashapes/issues"
+  },
+  "homepage": "https://github.com/tzaffi/my-mashapes",
+  "devDependencies": {
+    "express": "^4.12.4",
+    "jsonfile": "^2.0.0",
+    "unirest": "^0.4.0",
+    "util": "^0.10.3"
+  }
+}
