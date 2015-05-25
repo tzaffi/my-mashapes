@@ -67,7 +67,7 @@ language: "English"
 }
 ```
 
-### MEME GENERATER:
+### MEME GENERATOR:
 
 TODO
 
