@@ -27,7 +27,7 @@
   "devDependencies": {
     "express": "^4.12.4",
     "jsonfile": "^2.0.0",
-    "unirest": "^0.4.0",
-    "util": "^0.10.3"
+    "lodash": "^3.9.2",
+    "unirest": "^0.4.0"
   }
 }

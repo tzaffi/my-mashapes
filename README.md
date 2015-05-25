@@ -13,7 +13,9 @@ One off, dockerizable node express bridges to some of my favorite [mashape](http
  * run each api at a preconfigured port
  * build each docker image
  * run each docker image at a preconfigured port
-
+* Explain the meme api. In particular:
+ * BAD YODA: http://localhost:7111/Darth%20Maul/why%20you%20no/say%20hi?
+ * GOOD YODA: http://localhost:7111/Advice%20Yoda/why%20you%20no/say%20hi?
 ##First, let's put the links down
 
 * Yodaize virtually any English sentence with [Yoda Speak](https://www.mashape.com/ismaelc/yoda-speak)

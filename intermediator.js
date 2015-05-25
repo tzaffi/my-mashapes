@@ -17,7 +17,8 @@
   "apiSecretName": "monkey-api-secret",
   "apiSecretValue": "a23pouiajsfldkhjoip32uiqrjwagkbpj;fja"
   "multipleParams": false,
-  "urlParams": "sentence"
+  "urlParams": "sentence" // or when multipleParams true ["font", "meme", "top", "bottom"]
+  "urlDefault": ["Impact"] // required when multipleParams true
 } 
  *
  * Note, that currently multipleParms must be false, and the following are not supported:
@@ -28,6 +29,8 @@
  * APPROPRIATELY.
  *************/
 
+var _ = require('lodash');
+var querystring = require('querystring');
 var express = require('express');
 var unirest = require('unirest');
 var app = express();
@@ -43,11 +46,39 @@ function mashapeTexterize(str){
 /**
  * Process the request, pass along the relevant info to mashape,
  * and report back the results.
+ * Different cases depending on whether config.multipleParams
+ * is true or false.
+ * if config.multipleParams:
+ *    split the req.url using "/" as separator into parameters
+ *    text process each of these 
+ *    concatenate config.urlDefault + the above
+ *    append ?param1=value1&param2=value2 with values taken from the above
+ * else:
+ *    just append ?theUrlParam=the text processed request url
  **/
 function mashapeURL(req, config){
-    var preText = mashapeTexterize(decodeURI(req.url.substring(1)));
-    console.log("preText: ", preText);
-    var url = config.url + "?" + config.urlParams + "=" + preText;
+    var url;
+    if(config.multipleParams){
+	console.log("Considering multiple params");
+	var params = req.url.split("/");
+	params.splice(0,1); //get rid of first empty string since url starts with "/"
+	//	console.log("Are these the guys????", params);
+	params = _.map(params, _.flow(mashapeTexterize,decodeURI))
+        //	console.log("How about these????", params);
+	params = config.urlDefault.concat(params);
+	//	console.log("READY NOW???", params);
+	var zipped = _.zip(config.urlParams, params);
+	var paramObj = {};
+	_.map(zipped, function(x){ return paramObj[x[0]] = x[1] });
+	console.log("paramObj:\n", paramObj);
+	url = config.url + "?" + querystring.stringify(paramObj);
+	//console.log("MUST BE NOW!!!!!!!!", url);
+    } else {
+	console.log("Only a single param");
+	var preText = mashapeTexterize(decodeURI(req.url.substring(1)));
+	console.log("preText: ", preText);
+	url = config.url + "?" + config.urlParams + "=" + preText;
+    }
     return url;
 }
 
@@ -75,18 +106,30 @@ app.get('*', function (req, res) {
 	    url: req.url
 	};
 	console.log("interesting bits\n", interestingBits);
-
-	unirest.get(mashapeURL(req, config))
+	
+	/*** WHILE DEBUGGING *** /
+	mashapeURL(req, config)
+	res.status(200).send("hello");
+	/*** END WHILE DEBUGGING ***/
+	var url = mashapeURL(req, config);
+	console.log("Querying the url:\n", url);
+	unirest.get(url)
 	    .header(config.apiKeyName, config.apiKeyValue)
 	    .header("Accept", config.contentType)
-	    //.header("Accept", "application/json")
 	    .end(function(result) {
 		    console.log("\nstatus:\n", result.status, 
 				"\nheaders:\n", result.headers, 
-				"\nbody:\n", result.body);
-		    
-		    res.status(result.status).send(result.body); //json(result.body)
-			});
+				"\nbody:\n", ( result.headers["content-type"].substring(0, 5) == "image" 
+					       ? "<IMAGE>"
+					       : result.body
+					       ) 
+				);
+		    //res.setHeader( "content-type", result.headers["content-type"] )
+		    //res.type('jpeg');
+		    /*		    res.status(result.status)
+			.send(result.body); //json(result.body)
+		    */
+		}).pipe(res);
     });
 
 var server = app.listen(port, function () {

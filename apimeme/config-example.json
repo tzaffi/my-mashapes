@@ -1,0 +1,11 @@
+{
+  "url": "https://ronreiter-meme-generator.p.mashape.com/meme",
+  "needsApiKey": true,
+  "contentType": "image/jpeg", 
+  "apiKeyName":  "X-Mashape-Key",
+  "apiKeyValue": "YOUR API KEY HERE",
+  "needsApiSecret": false,
+  "multipleParams": true,
+  "urlParams": ["font", "font_size", "meme", "bottom", "top"],
+  "urlDefault": ["Impact", "50"]
+}

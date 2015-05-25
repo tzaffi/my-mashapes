@@ -1,9 +1,0 @@
-{
-  "url": "https://yoda.p.mashape.com/yoda",
-  "needsApiKey": true,
-  "apiKeyName":  "X-Mashape-Key",
-  "apiKeyValue": "mdfja;slfdkja;lfdkja;ldfkjas;dfljkas",
-  "needsApiSecret": false,
-  "multipleParams": false,
-  "urlParams": "sentence"
-}
