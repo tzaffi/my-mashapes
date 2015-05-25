@@ -50,7 +50,9 @@ node intermediator.js 9999 loudelement/config.json
 ```
 
 Clicking on 
+
 [http://localhost:9999/I like baseball very much. But I really like basketball much more than baseball.](http://localhost:9999/I%20like%20baseball%20very%20much.%20But%20I%20really%20like%20basketball%20much%20more%20than%20baseball.)
+
 should result in 
 ```json
 {
@@ -62,4 +64,21 @@ status: "OK",
 language: "English"
 }
 ```
+## Dockerizing
+
+You can create docker containers for each application.
+For example, to create a docker container `yoda` for yodaspeak run
+`make yoda` (see the [the Makefile](./Makefile) for the actual Docker command).
+
+To run the container web service use `make yodaize`.
+
+Note the the docker webservice **DOES NOT RUN ON LOCALHOST** but runs on 
+`http://192.168.99.100:9999/hello%20yoda` instead. So with docker the above
+url would look like:
+
+[http://192.168.99.100:9999/I like baseball very much. But I really like basketball much more than baseball.](http://192.168.99.100:9999/I%20like%20baseball%20very%20much.%20But%20I%20really%20like%20basketball%20much%20more%20than%20baseball.)
+
+Similarly, `make sentiment` builds the container
+and `make sentimentize` runs the container on
+port 9998.
 
