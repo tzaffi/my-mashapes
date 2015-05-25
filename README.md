@@ -66,6 +66,11 @@ status: "OK",
 language: "English"
 }
 ```
+
+### MEME GENERATER:
+
+TODO
+
 ## Dockerizing
 
 You can create docker containers for each application.
