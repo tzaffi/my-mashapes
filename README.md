@@ -16,11 +16,12 @@ One off, dockerizable node express bridges to some of my favorite [mashape](http
 * Explain the meme api. In particular:
  * BAD YODA: http://localhost:7111/Darth%20Maul/why%20you%20no/say%20hi?
  * GOOD YODA: http://localhost:7111/Advice%20Yoda/why%20you%20no/say%20hi?
-##First, let's put the links down
 
+##First, let's put the links down
 * Yodaize virtually any English sentence with [Yoda Speak](https://www.mashape.com/ismaelc/yoda-speak)
 * Simple happy vs. sad sentiment analysis with [Loud Element](https://www.mashape.com/loudelement/free-natural-language-processing-service)
 * Get geographic information from an IP Address with [Neutrino](https://www.mashape.com/neutrinoapi/ip-info)
+* TODO: add link for **apimeme** meme generator as well
 
 ## Next, I need to get accounts and API keys
 
@@ -67,7 +68,7 @@ language: "English"
 }
 ```
 
-### MEME GENERATER:
+### MEME GENERATOR:
 
 TODO
 
