@@ -6,6 +6,6 @@
   "apiKeyValue": "YOUR API KEY HERE",
   "needsApiSecret": false,
   "multipleParams": true,
-  "urlParams": ["font", "font_size", "meme", "bottom", "top"],
+  "urlParams": ["font", "font_size", "meme", "top", "bottom"],
   "urlDefault": ["Impact", "50"]
 }
