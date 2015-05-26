@@ -26,7 +26,7 @@ One off, dockerizable node express bridges to some of my favorite [mashape](http
 ## Next, I need to get accounts and API keys
 
 * That's done. This is store in local `config.json` (or `mashape.js`) in each app directory.
-Unfortunately, I can't really put that on git, as it's poor practice to divule API keys publically.
+Unfortunately, I can't really put that on git, as it's poor practice to divulge API keys in public.
 
 ## Here's what you can expect
 
