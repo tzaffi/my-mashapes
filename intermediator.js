@@ -82,9 +82,9 @@ function mashapeURL(req, config){
     return url;
 }
 
-console.log("USAGE:\n node intermediator.js path/to/config.json\n\n");
+var usage = "USAGE: node intermediator.js PORT path/to/config.json";
+console.log(usage);
 
-var usage = "node intermediator.js PORT path/to/config.json";
 var port = parseInt(process.argv[2]);
 var configPath = "./" + process.argv[3];
 var config = require(configPath);
