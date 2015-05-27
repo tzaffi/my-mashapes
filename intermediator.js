@@ -124,19 +124,10 @@ app.get('*', function (req, res) {
 					       : result.body
 					       ) 
 				);
-		    //res.setHeader( "content-type", result.headers["content-type"] )
-		    //res.type('jpeg');
-		    /*		    res.status(result.status)
-			.send(result.body); //json(result.body)
-		    */
 		}).pipe(res);
     });
 
 var server = app.listen(port, function () {
-	//	var host = server.address().address;
-	//	var port = server.address().port;
-	//	console.log('REDIRECT app listening at http://%s:%s', host, port);
-	//	console.log('REDIRECTING ALL TRAFFIC TO ', REDIRECT_IP);
 	console.log("STARTING UP");
 	
 	});
